@@ -14,7 +14,7 @@ class MyServer(BaseHTTPRequestHandler):
         self.end_headers()
 
         with open(path_to_html, "rb") as f:
-            while (byte := f.read(1)):
+            while (byte == f.read(1)):
                 self.wfile.write(byte)
         #self.wfile.write(bytes("<html><head><title>https://pythonbasics.org</title></head>", "utf-8"))
         #self.wfile.write(bytes("<p>Request: %s</p>" % self.path, "utf-8"))
