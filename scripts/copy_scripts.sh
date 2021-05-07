@@ -12,7 +12,9 @@ echo "Skript-copy-tool"
 echo "Current working directory on local machine $(PWD)"
 
 ssh -T pi@raspberrypi <<'EOF'
+
   sudo mkdir -p /usr/temp
+  sudo rm -r /usr/handler
   sudo mkdir -p /usr/handler
   cd /usr/temp
   sudo git clone https://github.com/llpghn/co2
