@@ -6,5 +6,8 @@ echo "Skript-copy-tool"
 echo "Current working directory on local machine $(PWD)"
 
 
-ssh pi@raspberrypi 'sudo mkdir -p /usr/handler' 
-rsync -avR i2c/ pi@raspberrypi:/usr/handler
+ssh pi@raspberrypi -T << 'EOF'
+  mkdir -p /usr/handler
+  cd /usr/handler
+  git clone https://github.com/llpghn/co2
+EOF
