@@ -1,0 +1,15 @@
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER
+    CMAKE_ASM_FLAGS
+    CMAKE_CXX_COMPILER
+    CMAKE_CXX_FLAGS
+
+
+/Library/Developer/CommandLineTools/usr/bin/ranlib: file: libpaho-mqtt3cs.a(SHA1.c.o) has no symbols
+/Library/Developer/CommandLineTools/usr/bin/ranlib: file: libpaho-mqtt3cs.a(SHA1.c.o) has no symbols
+/Library/Developer/CommandLineTools/usr/bin/ranlib: file: libpaho-mqtt3as.a(SHA1.c.o) has no symbols
+/Library/Developer/CommandLineTools/usr/bin/ranlib: file: libpaho-mqtt3as.a(SHA1.c.o) has no symbols
+/Library/Developer/CommandLineTools/usr/bin/ranlib: file: /Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/libpaho-mqtt3cs.a(SHA1.c.o) has no symbols
+/Library/Developer/CommandLineTools/usr/bin/ranlib: file: /Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/libpaho-mqtt3as.a(SHA1.c.o) has no symbols

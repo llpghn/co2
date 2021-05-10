@@ -1,0 +1,30 @@
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/MQTTAsync_publish.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/MQTTAsync_publish_time.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/MQTTAsync_subscribe.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/MQTTClient_publish.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/MQTTClient_publish_async.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/MQTTClient_subscribe.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/paho_c_pub.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/paho_c_sub.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/paho_cs_pub.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/paho_cs_sub.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/samples/pubsub_opts.c
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/CONTRIBUTING.md
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/epl-v20
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/edl-v10
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/README.md
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/share/doc/Eclipse Paho C/notice.html
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/libpaho-mqtt3c.a
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/libpaho-mqtt3a.a
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/include/MQTTAsync.h
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/include/MQTTClient.h
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/include/MQTTClientPersistence.h
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/include/MQTTProperties.h
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/include/MQTTReasonCodes.h
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/include/MQTTSubscribeOpts.h
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/include/MQTTExportDeclarations.h
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/libpaho-mqtt3cs.a
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/libpaho-mqtt3as.a
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig.cmake
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig-debug.cmake
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/build/paho-mqtt-sys-26ddd79901cf2c1a/out/lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfigVersion.cmake
