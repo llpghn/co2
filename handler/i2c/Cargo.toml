@@ -7,7 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-mosquitto-client = "0.1.5"
-#openssl = { version = "0.10.29", features = ["vendored"] }
-#paho-mqtt = { git = "https://github.com/eclipse/paho.mqtt.rust.git", branch = "master" }
+# = "0.1.5"
+openssl = { version = "0.10.29", features = ["vendored"] }
+paho-mqtt = { git = "https://github.com/eclipse/paho.mqtt.rust.git", branch = "master" }
 # mqtt-async-client = "0.2.0"
