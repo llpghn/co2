@@ -1,0 +1,1 @@
+{"rustc":2624477146670686978,"features":"[\"alloc\", \"std\"]","target":18047942413794056808,"profile":16605510667465718815,"path":8664449256029415807,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"armv7-unknown-linux-musleabihf/debug/.fingerprint/futures-task-29ad4014f5b641c6/dep-lib-futures-task"}}],"rustflags":[],"metadata":8141544154866689520,"config":0}

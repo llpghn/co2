@@ -1,0 +1,9 @@
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/deps/libproc_macro_hack-8a1cd66ff9465aa0.dylib: /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/lib.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/quote.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/error.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/iter.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/parse.rs
+
+/Users/patrickberendes/projects/o2monitor/handler/i2c/target/debug/deps/proc_macro_hack-8a1cd66ff9465aa0.d: /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/lib.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/quote.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/error.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/iter.rs /Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/parse.rs
+
+/Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/lib.rs:
+/Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/quote.rs:
+/Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/error.rs:
+/Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/iter.rs:
+/Users/patrickberendes/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro-hack-0.5.19/src/parse.rs:
