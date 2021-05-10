@@ -10,4 +10,5 @@ edition = "2018"
 # = "0.1.5"
 openssl = { version = "0.10.29", features = ["vendored"] }
 paho-mqtt = { git = "https://github.com/eclipse/paho.mqtt.rust.git", branch = "master" }
+env_logger = "0.8.3"
 # mqtt-async-client = "0.2.0"
