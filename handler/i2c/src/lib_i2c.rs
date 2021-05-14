@@ -16,7 +16,7 @@ bcd2dec
 */
   #[repr(u8)]
   enum Register{
-    test = 0x78,
+    Test = 0x78,
   }
 
 
@@ -41,7 +41,7 @@ bcd2dec
     ((dec / 10) << 4) | (dec % 10)
   }
 
-  fn read_register(connection: I2c, addr: u16) -> Result< u8 , Box<dyn Error>> {
+  fn read_register(mut connection: I2c, addr: u16) -> Result< u8 , Box<dyn Error>> {
     connection.set_slave_address(addr);
     
     Ok(5)
