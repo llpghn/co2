@@ -49,7 +49,7 @@ bcd2dec
     i2c.set_slave_address(ADDR_BME280)?;
     
     //let command: [u8; 1] = [0xF7];
-    let command: [u8; 1] = [Register::Temp_lsb as u8];
+    let command: [u8; 1] = [Register::Temp_msb as u8];
     let written_bytes: usize = i2c.write(&command)?;
     println!("Total Bytes send: {}", written_bytes);
 
