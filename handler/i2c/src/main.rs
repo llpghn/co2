@@ -30,7 +30,7 @@
 
 
 mod lib_mqtt;
-
+mod lib_i2c;
 /////////////////////////////////////////////////////////////////////////////
 
 const SENSOR_PUB_TEMPERATURE: &str = "/sensor/value/temperature";
@@ -42,21 +42,8 @@ fn main() {
 
     env_logger::init();                                                         // Initialize the logger from the env
     
-    let cli = lib_mqtt::lib_mqtt::connect_to_broker();
-
-    lib_mqtt::lib_mqtt::send_msg_temp(&cli);
-     // Create a message and publish it
-     /*
-     let msg = lib_mqtt::lib_mqtt::mqtt::MessageBuilder::new()
-         .topic(SENSOR_PUB_TEMPERATURE)
-         .payload("Hello synchronous world!")
-         .qos(1)
-         .finalize();
- 
-     if let Err(e) = cli.publish(msg) {
-         println!("Error sending message: {:?}", e);
-     }
-     */
+    //let cli = lib_mqtt::lib_mqtt::connect_to_broker();
+    //lib_mqtt::lib_mqtt::send_msg_temp(&cli);
      // Disconnect from the broker
-     cli.disconnect(None).unwrap();
+     //cli.disconnect(None).unwrap();
  }

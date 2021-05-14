@@ -33,10 +33,8 @@ Webserver (SPA)           websocket |-----|     |
   ### Topics
   #### Emits
 
-  * /sensor/value/temperature
-  * /sensor/value/humidity
-  * /sensor/value/co2
-  * /sensor/value/lightlevel
+  * /sensors/value/temperature
+  * /sensors/value/humidity
 
   #### Process
 

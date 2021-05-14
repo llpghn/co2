@@ -27,7 +27,7 @@ cargo build --target=arm-unknown-linux-gnueabi
 
 und dann übertragen mit 
 ```
-scp /target/arm-unknown-linux-gnueabi/debug/<MODULENAME>
+scp /target/arm-unknown-linux-gnueabi/debug/i2c pi@raspberrypi:/home/pi
 ```
 
 -----
