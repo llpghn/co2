@@ -15,17 +15,16 @@ pub mod lib_i2c{
 bcd2dec
 */
 
-  struct bme260{
-    Addr: u16 = 0x76,
-    Hum_lsb : u8 = 0xFE,
-    Hum_msb : u8 = 0xFD,
-    Temp_xlsb : u8 = 0xFC,
-    Temp_lsb: u8 = 0xFB,
-    Temp_msb : u8 = 0xFA,
-    Press_xlsb : u8 = 0xF9,
-    Press_lsb : u8 = 0xF8,
-    Press_msb : u8 = 0xF7,
-  }
+  const Addr: u16 = 0x76,
+  const Hum_lsb : u8 = 0xFE,
+  const Hum_msb : u8 = 0xFD,
+  const Temp_xlsb : u8 = 0xFC,
+  const Temp_lsb: u8 = 0xFB,
+  const Temp_msb : u8 = 0xFA,
+  const Press_xlsb : u8 = 0xF9,
+  const Press_lsb : u8 = 0xF8,
+  const Press_msb : u8 = 0xF7,
+  
 
   const ADDR_BME280: u16 = 0x76;
 
@@ -42,10 +41,10 @@ bcd2dec
   pub fn scan() -> Result<(), Box<dyn Error>> {
     println!("Start scanning I2C-Bus - 101");
     let mut i2c = I2c::new()?;
-    i2c.set_slave_address(bme260::addr)?;
+    i2c.set_slave_address(ADDR_BME280)?;
     
     //let command: [u8; 1] = [0xF7];
-    let command: [u8; 1] = [bme260::hum_msb];
+    let command: [u8; 1] = [Hum_lsb];
     let written_bytes: usize = i2c.write(&command)?;
     println!("Total Bytes send: {}", written_bytes);
 
