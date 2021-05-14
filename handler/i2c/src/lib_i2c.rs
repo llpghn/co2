@@ -15,15 +15,15 @@ pub mod lib_i2c{
 bcd2dec
 */
 
-  const Addr: u16 = 0x76,
-  const Hum_lsb : u8 = 0xFE,
-  const Hum_msb : u8 = 0xFD,
-  const Temp_xlsb : u8 = 0xFC,
-  const Temp_lsb: u8 = 0xFB,
-  const Temp_msb : u8 = 0xFA,
-  const Press_xlsb : u8 = 0xF9,
-  const Press_lsb : u8 = 0xF8,
-  const Press_msb : u8 = 0xF7,
+
+  const Hum_lsb : u8 = 0xFE;
+  const Hum_msb : u8 = 0xFD;
+  const Temp_xlsb : u8 = 0xFC;
+  const Temp_lsb: u8 = 0xFB;
+  const Temp_msb : u8 = 0xFA;
+  const Press_xlsb : u8 = 0xF9;
+  const Press_lsb : u8 = 0xF8;
+  const Press_msb : u8 = 0xF7;
   
 
   const ADDR_BME280: u16 = 0x76;
