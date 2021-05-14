@@ -32,8 +32,8 @@ pub mod lib_i2c{
     i2c.write(&command)?;
     println!("Have send the command!");
 
-    
-    let mut reg : [0u8; 2] = [0, 0];
+
+    let mut reg : [u8; 2] = [0, 0];
     i2c.read(&mut reg)?;
     Ok(())
   }
