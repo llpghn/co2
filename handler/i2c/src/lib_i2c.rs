@@ -9,7 +9,7 @@
 mod lib_i2c{
   /// Scans the I2C-Bus for other connected devices.
   use rppal::i2c::I2c;
-
+  use std::error::Error;
 
   const ADDR_BME280: u16 = 0x76;
 
