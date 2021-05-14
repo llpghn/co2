@@ -29,6 +29,9 @@ pub mod lib_i2c{
     i2c.set_slave_address(ADDR_BME280)?;
     let command: u8 = 0x76;
     let mut readBud: [u8; 3];
+    readBud[0]=0;
+    readBud[1]=0;
+    readBud[2]=0;
     i2c.block_write(command, &readBud)?;
     println!("{}-{}-{}", readBud[0], readBud[1], readBud[2]);
     Ok(())
