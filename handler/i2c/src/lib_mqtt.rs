@@ -5,6 +5,11 @@ pub mod lib_mqtt{
   pub use paho_mqtt as mqtt;
 
 
+  //let cli = lib_mqtt::lib_mqtt::connect_to_broker();
+  //lib_mqtt::lib_mqtt::send_msg_temp(&cli);
+  // Disconnect from the broker
+  //cli.disconnect(None).unwrap();
+
   /// Connects to the MQTT-Broker installes locally on the system.
   /// # Returns
   /// * mqtt::client from paho_mqtt Library
