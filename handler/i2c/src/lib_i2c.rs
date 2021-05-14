@@ -16,19 +16,15 @@ bcd2dec
 */
   #[repr(u8)]
   enum Register{
-    Test = 0x78,
+    Hum_lsb = 0xFE,
+    Hum_msb = 0xFD,
+    Temp_xlsb = 0xFC,
+    Temp_lsb = 0xFB,
+    Temp_msb = 0xFA,
+    Press_xlsb = 0xF9,
+    Press_lsb = 0xF8,
+    Press_msb = 0xF7,
   }
-
-
-  const Hum_lsb : u8 = 0xFE;
-  const Hum_msb : u8 = 0xFD;
-  const Temp_xlsb : u8 = 0xFC;
-  const Temp_lsb: u8 = 0xFB;
-  const Temp_msb : u8 = 0xFA;
-  const Press_xlsb : u8 = 0xF9;
-  const Press_lsb : u8 = 0xF8;
-  const Press_msb : u8 = 0xF7;
-  
 
   const ADDR_BME280: u16 = 0x76;
 
@@ -53,7 +49,7 @@ bcd2dec
     i2c.set_slave_address(ADDR_BME280)?;
     
     //let command: [u8; 1] = [0xF7];
-    let command: [u8; 1] = [Hum_lsb];
+    let command: [u8; 1] = [Register::Temp_lsb];
     let written_bytes: usize = i2c.write(&command)?;
     println!("Total Bytes send: {}", written_bytes);
 
