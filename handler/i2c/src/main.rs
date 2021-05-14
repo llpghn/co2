@@ -68,7 +68,7 @@ fn main() {
     i2c.set_slave_address(ADDR_DS3231)?;
     let command: u8 = 0x76;
     let mut readBud: [u8; 3];
-    i2c.block_write(command, &readBud)?;
+    i2c.block_write(command, &readBud);
     println!("{}-{}-{}", readBud[0], readBud[1], readBud[2]);
 
 }
