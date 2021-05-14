@@ -35,6 +35,7 @@ pub mod lib_i2c{
 
     let mut reg : [u8; 2] = [0, 0];
     i2c.read(&mut reg)?;
+    println!("{}-{}", reg[0], reg[1]);
     Ok(())
   }
 }
