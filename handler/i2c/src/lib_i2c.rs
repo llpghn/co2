@@ -27,13 +27,13 @@ pub mod lib_i2c{
     println!("Start scanning I2C-Bus");
     let mut i2c = I2c::new()?;
     i2c.set_slave_address(ADDR_BME280)?;
-    let command: u8 = 0x76;
-    let mut readBud: [u8; 3] = [0, 0, 0];
-    i2c.block_write(command)?;
-    println!("{}-{}-{}", readBud[0], readBud[1], readBud[2]);
+    let command: [u8] = 0x76;
 
-    //let mut reg = [0u8; 3] = [0, 0, 0];
-    //i2c.block_read(REG_SECONDS as u8, &mut reg)?;
+    i2c.write(command)?;
+    println!("Have send the command!");
+
+    let mut reg = [0u8; 2] = [0, 0];
+    i2c.read(&mut reg)?;
     Ok(())
   }
 }
