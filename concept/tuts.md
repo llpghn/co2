@@ -29,3 +29,9 @@ und dann übertragen mit
 ```
 scp /target/arm-unknown-linux-gnueabi/debug/<MODULENAME>
 ```
+
+-----
+
+cd ~/co2/handler/i2c
+git pull
+

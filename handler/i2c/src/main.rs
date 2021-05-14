@@ -26,64 +26,28 @@
  *    Frank Pagliughi - initial implementation and documentation
  *******************************************************************************/
 
-use paho_mqtt as mqtt;
-use std::{env, process, time::Duration};
- 
-/////////////////////////////////////////////////////////////////////////////
- 
-const SENSOR_PUB_TEMPERATURE: &str = "/sensor/value/temperature";
-// const SENSOR_PUB_HUMIDITY: &str = "/sensor/value/humidity";
+//use paho_mqtt as mqtt;
 
-fn connect_to_broker() -> mqtt::Client{
-    // Create a client & define connect options
-    let host = env::args()
-        .nth(1)
-        .unwrap_or_else(|| "tcp://localhost:1883".to_string());
- 
-    let mut cli = mqtt::Client::new(host).unwrap_or_else(|e| {
-        println!("Error creating the client: {:?}", e);
-        process::exit(1);
-    });
- 
-    // Use 5sec timeouts for sync calls.
-    cli.set_timeout(Duration::from_secs(5));
- 
-    // Connect and wait for it to complete or fail
-    if let Err(e) = cli.connect(None) {
-        println!("Unable to connect: {:?}", e);
-        process::exit(1);
-    }
-    cli
-}
+
+mod lib_mqtt;
+
+/////////////////////////////////////////////////////////////////////////////
+
+const SENSOR_PUB_TEMPERATURE: &str = "/sensor/value/temperature";
+
 
 
 fn main() {
-     // Initialize the logger from the environment
-     env_logger::init();
-    let cli = connect_to_broker();
-     /*
-     // Create a client & define connect options
-     let host = env::args()
-         .nth(1)
-         .unwrap_or_else(|| "tcp://localhost:1883".to_string());
- 
-     let mut cli = mqtt::Client::new(host).unwrap_or_else(|e| {
-         println!("Error creating the client: {:?}", e);
-         process::exit(1);
-     });
- 
-     // Use 5sec timeouts for sync calls.
-     cli.set_timeout(Duration::from_secs(5));
- 
-     // Connect and wait for it to complete or fail
-     if let Err(e) = cli.connect(None) {
-         println!("Unable to connect: {:?}", e);
-         process::exit(1);
-     }
-     */
- 
+    //let args: Vec<String> = env::args().collect();                              // get parameter from CLI
+
+    env_logger::init();                                                         // Initialize the logger from the env
+    
+    let cli = lib_mqtt::lib_mqtt::connect_to_broker();
+
+    lib_mqtt::lib_mqtt::send_msg_temp(&cli);
      // Create a message and publish it
-     let msg = mqtt::MessageBuilder::new()
+     /*
+     let msg = lib_mqtt::lib_mqtt::mqtt::MessageBuilder::new()
          .topic(SENSOR_PUB_TEMPERATURE)
          .payload("Hello synchronous world!")
          .qos(1)
@@ -92,7 +56,7 @@ fn main() {
      if let Err(e) = cli.publish(msg) {
          println!("Error sending message: {:?}", e);
      }
- 
+     */
      // Disconnect from the broker
      cli.disconnect(None).unwrap();
  }
