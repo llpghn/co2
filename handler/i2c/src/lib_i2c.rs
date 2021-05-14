@@ -14,6 +14,9 @@ pub mod lib_i2c{
 /*
 bcd2dec
 */
+  enum Register{
+    test: u8 = 0x78,
+  }
 
 
   const Hum_lsb : u8 = 0xFE;
@@ -37,6 +40,10 @@ bcd2dec
     ((dec / 10) << 4) | (dec % 10)
   }
 
+  fn read_register(connection: I2c, addr: u8) -> Result< u8 , Box<dyn Error>> {
+    connection.set_slave_address(addr);
+
+  } 
 
   pub fn scan() -> Result<(), Box<dyn Error>> {
     println!("Start scanning I2C-Bus - 101");
