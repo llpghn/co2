@@ -52,7 +52,7 @@ fn dec2bcd(dec: u8) -> u8 {
 }
 
 
-fn main() -> Result<(), Box<dyn Error>>{
+fn main() {
     //let args: Vec<String> = env::args().collect();                              // get parameter from CLI
 
     env_logger::init();                                                         // Initialize the logger from the env
