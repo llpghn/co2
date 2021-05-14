@@ -31,5 +31,6 @@ pub mod lib_i2c{
     let mut readBud: [u8; 3];
     i2c.block_write(command, &readBud)?;
     println!("{}-{}-{}", readBud[0], readBud[1], readBud[2]);
+    ()
   }
 }
