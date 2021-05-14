@@ -29,13 +29,14 @@ pub mod lib_i2c{
     i2c.set_slave_address(ADDR_BME280)?;
     let command: [u8; 1] = [0x76];
 
-    i2c.write(&command)?;
-    println!("Have send the command!");
+    let written_bytes: i32 = i2c.write(&command)?;
+    println!("Total Bytes send: {}", written_bytes);
+
 
 
     let mut reg : [u8; 2] = [0, 0];
-    i2c.read(&mut reg)?;
-    println!("{}-{}", reg[0], reg[1]);
+    let read_bytes: i32 = i2c.read(&mut reg)?;
+    println!("Read {} bytes: {}-{}", read_bytes, reg[0], reg[1]);
     Ok(())
   }
 }
