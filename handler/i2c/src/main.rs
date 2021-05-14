@@ -29,7 +29,7 @@
 //use paho_mqtt as mqtt;
 
 
-mod lib_mqtt;
+//mod lib_mqtt;
 mod lib_i2c;
 /////////////////////////////////////////////////////////////////////////////
 
@@ -44,6 +44,9 @@ fn main() {
     
     //let cli = lib_mqtt::lib_mqtt::connect_to_broker();
     //lib_mqtt::lib_mqtt::send_msg_temp(&cli);
-     // Disconnect from the broker
-     //cli.disconnect(None).unwrap();
- }
+    // Disconnect from the broker
+    //cli.disconnect(None).unwrap();
+
+    lib_i2c::lib_i2c::scan();
+
+}
