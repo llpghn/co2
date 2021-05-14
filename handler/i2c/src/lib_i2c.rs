@@ -32,11 +32,9 @@ pub mod lib_i2c{
     let written_bytes: usize = i2c.write(&command)?;
     println!("Total Bytes send: {}", written_bytes);
 
-
-
     let mut reg : [u8; 1] = [0];
     let read_bytes: usize = i2c.read(&mut reg)?;
-    println!("Read {} bytes: {}-{}", read_bytes, bcd2dec(reg[0]), bcd2dec(reg[1]));
+    println!("Read {} bytes: {}", read_bytes, bcd2dec(reg[0]));
     Ok(())
   }
 }
