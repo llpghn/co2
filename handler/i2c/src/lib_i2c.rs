@@ -27,7 +27,7 @@ pub mod lib_i2c{
     println!("Start scanning I2C-Bus - 101");
     let mut i2c = I2c::new()?;
     i2c.set_slave_address(ADDR_BME280)?;
-    let command: [u8; 1] = [0x76];
+    let command: [u8; 1] = [0xF7];
 
     let written_bytes: usize = i2c.write(&command)?;
     println!("Total Bytes send: {}", written_bytes);
