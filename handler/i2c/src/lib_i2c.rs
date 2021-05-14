@@ -42,10 +42,10 @@ bcd2dec
   pub fn scan() -> Result<(), Box<dyn Error>> {
     println!("Start scanning I2C-Bus - 101");
     let mut i2c = I2c::new()?;
-    i2c.set_slave_address(bme260.addr)?;
+    i2c.set_slave_address(bme260::addr)?;
     
     //let command: [u8; 1] = [0xF7];
-    let command: [u8; 1] = [bme260.hum_msb];
+    let command: [u8; 1] = [bme260::hum_msb];
     let written_bytes: usize = i2c.write(&command)?;
     println!("Total Bytes send: {}", written_bytes);
 
