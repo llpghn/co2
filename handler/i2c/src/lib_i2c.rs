@@ -25,11 +25,11 @@ pub mod lib_i2c{
 
   pub fn scan(){
     println!("Start scanning I2C-Bus");
-    let i2c = I2c::new()?;
-    i2c.set_slave_address(ADDR_BME280)?;
+    let i2c = I2c::new();
+    i2c.set_slave_address(ADDR_BME280);
     let command: u8 = 0x76;
     let mut readBud: [u8; 3];
-    i2c.block_write(command, &readBud)?;
+    i2c.block_write(command, &readBud);
     println!("{}-{}-{}", readBud[0], readBud[1], readBud[2]);
   }
 }
