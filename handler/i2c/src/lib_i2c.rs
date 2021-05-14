@@ -11,7 +11,7 @@ pub mod lib_i2c{
   use rppal::i2c::I2c;
   use std::error::Error;
 
-  const ADDR_BME280: u16 = 0x77;
+  const ADDR_BME280: u16 = 0x76;
 
   // Helper functions
   fn bcd2dec(bcd: u8) -> u8 {
