@@ -62,10 +62,10 @@ fn main() {
     // Disconnect from the broker
     //cli.disconnect(None).unwrap();
 
-    let mut i2c = I2c::new()?;
+    let mut i2c = I2c::new();
 
     // Set the I2C slave address to the device we're communicating with.
-    i2c.set_slave_address(ADDR_DS3231)?;
+    i2c.set_slave_address(ADDR_DS3231);
     let command: u8 = 0x76;
     let mut readBud: [u8; 3];
     i2c.block_write(command, &readBud);
