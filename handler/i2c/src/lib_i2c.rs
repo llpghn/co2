@@ -14,8 +14,9 @@ pub mod lib_i2c{
 /*
 bcd2dec
 */
+  #[repr(u8)]
   enum Register{
-    test: u8 = 0x78,
+    test = 0x78,
   }
 
 
