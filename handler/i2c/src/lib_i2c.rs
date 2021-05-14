@@ -16,15 +16,15 @@ bcd2dec
 */
 
   struct bme260{
-    addr: u16 = 0x76;
-    hum_lsb : u8 = 0xFE;
-    hum_msb : u8 = 0xFD;
-    temp_xlsb : u8 = 0xFC;
-    temp_lsb: u8 = 0xFB;
-    temp_msb : u8 = 0xFA;
-    press_xlsb : u8 = 0xF9;
-    press_lsb : u8 = 0xF8;
-    press_msb : u8 = 0xF7;
+    Addr: u16 = 0x76,
+    Hum_lsb : u8 = 0xFE,
+    Hum_msb : u8 = 0xFD,
+    Temp_xlsb : u8 = 0xFC,
+    Temp_lsb: u8 = 0xFB,
+    Temp_msb : u8 = 0xFA,
+    Press_xlsb : u8 = 0xF9,
+    Press_lsb : u8 = 0xF8,
+    Press_msb : u8 = 0xF7,
   }
 
   const ADDR_BME280: u16 = 0x76;
