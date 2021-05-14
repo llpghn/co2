@@ -19,8 +19,8 @@ bcd2dec
     Hum_lsb = 0xFE,
     Hum_msb = 0xFD,
     Temp_xlsb = 0xFC,
-    Temp_lsb = 0xFB,
-    Temp_msb = 0xFA,
+    Temp_lsb = 0x88,
+    Temp_msb = 0x89,
     Press_xlsb = 0xF9,
     Press_lsb = 0xF8,
     Press_msb = 0xF7,
@@ -49,7 +49,7 @@ bcd2dec
     i2c.set_slave_address(ADDR_BME280)?;
     
     //let command: [u8; 1] = [0xF7];
-    let command: [u8; 1] = [Register::Temp_msb as u8];
+    let command: [u8; 1] = [Register::Temp_lsb as u8];
     let written_bytes: usize = i2c.write(&command)?;
     println!("Total Bytes send: {}", written_bytes);
 
