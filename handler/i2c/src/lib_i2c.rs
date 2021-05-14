@@ -6,7 +6,7 @@
 // Slave address: 111011X (X = 0)
 //    dann mit X=0 Adressieren wir die 0x76 als Adresse.
 
-mod lib_i2c{
+pub mod lib_i2c{
   /// Scans the I2C-Bus for other connected devices.
   use rppal::i2c::I2c;
   use std::error::Error;
@@ -28,7 +28,7 @@ mod lib_i2c{
     let i2c = I2c::new();
     i2c.set_slave_address(ADDR_BME280);
     let command: u8 = 0x76;
-    let mut readBud: [u8, 3];
+    let mut readBud: [u8; 3];
     i2c.block_write(command, &readBud);
     println!("{}-{}-{}", readBud[0], readBud[1], readBud[2]);
   }
