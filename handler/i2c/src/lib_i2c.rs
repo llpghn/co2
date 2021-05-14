@@ -24,7 +24,7 @@ pub mod lib_i2c{
 
 
   pub fn scan() -> Result<(), Box<dyn Error>> {
-    println!("Start scanning I2C-Bus");
+    println!("Start scanning I2C-Bus - 101");
     let mut i2c = I2c::new()?;
     i2c.set_slave_address(ADDR_BME280)?;
     let command: [u8; 1] = [0x76];
