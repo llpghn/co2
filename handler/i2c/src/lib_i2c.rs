@@ -43,7 +43,8 @@ bcd2dec
 
   fn read_register(connection: I2c, addr: u16) -> Result< u8 , Box<dyn Error>> {
     connection.set_slave_address(addr);
-    Ok(())
+    
+    Ok(5)
   } 
 
   pub fn scan() -> Result<(), Box<dyn Error>> {
