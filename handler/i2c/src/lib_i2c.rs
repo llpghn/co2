@@ -36,7 +36,7 @@ pub mod lib_i2c{
 
     let mut reg : [u8; 2] = [0, 0];
     let read_bytes: usize = i2c.read(&mut reg)?;
-    println!("Read {} bytes: {}-{}", read_bytes, reg[0], reg[1]);
+    println!("Read {} bytes: {}-{}", read_bytes, bcd2dec(reg[0]), bcd2dec(reg[1]));
     Ok(())
   }
 }
