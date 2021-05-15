@@ -11,8 +11,6 @@ fn main() {
 
     env_logger::init();                                                         // Initialize the logger from the env
 
-    sens::loadValues();
-    println!("Temperature: {}", send.temperature);
     
     bme280::bme280::init();
     //let cli = lib_mqtt::lib_mqtt::connect_to_broker();
