@@ -86,7 +86,7 @@ fn main() {
     let mut message = String::from("Not set");
     toSend.getTemperatureMessage(&mut topic, &mut message);
     
-    lib_mqtt::lib_mqtt::send_msg(&cli, &topic, &message);
+    lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
 
 
     //println!("- Topic: {}", topic);
