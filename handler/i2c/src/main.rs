@@ -47,6 +47,6 @@ fn main() {
     // Disconnect from the broker
     //cli.disconnect(None).unwrap();
     lib_i2c::lib_i2c::scan();
-
+    lib_i2c::lib_i2c::read_temp_register();
 
 }

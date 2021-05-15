@@ -16,14 +16,9 @@ bcd2dec
 */
   #[repr(u8)]
   enum Register{
-    Hum_lsb = 0xFE,
-    Hum_msb = 0xFD,
     Temp_xlsb = 0xFC,
     Temp_lsb = 0x88,
     Temp_msb = 0x89,
-    Press_xlsb = 0xF9,
-    Press_lsb = 0xF8,
-    Press_msb = 0xF7,
   }
 
   const ADDR_BME280: u16 = 0x76;
@@ -37,9 +32,38 @@ bcd2dec
     ((dec / 10) << 4) | (dec % 10)
   }
 
-  fn read_register(mut connection: I2c, addr: u16) -> Result< u8 , Box<dyn Error>> {
-    connection.set_slave_address(addr);
+  /*
+  var2 = (((((adc_T >> 4) - (dig_T1)) * ((adc_T >> 4) - (dig_T1)))>> 12) * (dig_T3))>>14;
+  */
+
+
+  fn read_temp_register() -> Result< u8 , Box<dyn Error>> {
+    println!("--- Try to read the Temp ---")
+    let mut i2c = I2c::new()?;
+    let temp_msb: u8 = 0xFA;
+    let temp_lsb: u8 = 0xFB;
+    let temp_xlsb: u8 = 0xFC
+    i2c.set_slave_address(ADDR_BME280)?;
     
+    let written_bytes: usize = i2c.write(&temp_msb)?;
+    println!("Total Bytes send: {}", written_bytes);
+    let mut res_temp_msb : [u8; 1] = [0];
+    let read_bytes: usize = i2c.read(&mut res_temp_msb)?;
+
+    let written_bytes: usize = i2c.write(&temp_lsb)?;
+    println!("Total Bytes send: {}", written_bytes);
+    let mut res_temp_lsb : [u8; 1] = [0];
+    let read_bytes: usize = i2c.read(&mut res_temp_lsb)?;
+
+    let written_bytes: usize = i2c.write(&temp_xlsb)?;
+    println!("Total Bytes send: {}", written_bytes);
+    let mut res_temp_xlsb : [u8; 1] = [0];
+    let read_bytes: usize = i2c.read(&mut res_temp_xlsb)?;
+
+    let my_temp: i32 =  (res_temp_msb as i32 << 12) | (res_temp_lsb as i32 << 4) | (res_temp_xlsb >> 4);
+
+    println!("Read {} bytes: {}", read_bytes, my_temp);
+    Ok(())
     Ok(5)
   } 
 
