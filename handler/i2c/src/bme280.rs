@@ -33,8 +33,5 @@ pub mod bme280{
       pressure : measurements.pressure,
     };
     d
-    //println!("Relative Humidity = {}%", measurements.humidity);
-    //println!("Temperature = {} deg C", measurements.temperature);
-    //println!("Pressure = {} pascals", measurements.pressure);
   }
 }
