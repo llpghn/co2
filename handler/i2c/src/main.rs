@@ -13,9 +13,9 @@ enum sms{
 }
 
 struct CollectedData {
-    temperature: f32,
-    humidity: f32, 
-    pressure: f32,
+    mut temperature: f32,
+    mut humidity: f32, 
+    mut pressure: f32,
     
 }
 
