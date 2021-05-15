@@ -54,7 +54,7 @@ fn main() {
     };
 
     
-    while(true){
+    loop {
         match state{
             sms::CollectData => {
                 let measurements = bme280::bme280::get();

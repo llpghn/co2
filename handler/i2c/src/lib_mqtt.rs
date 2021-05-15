@@ -33,11 +33,11 @@ pub mod lib_mqtt{
     client
   }
 
-  pub fn send_message(client: &mqtt::Client, topic: &String, payload: &String ){
+  pub fn send_message(client: &mqtt::Client, topic: &String, message: &String ){
     //println!("{}-{}", topic, payload);
     let msg = mqtt::MessageBuilder::new()
       .topic(topic)
-      .payload(payload)
+      .payload(message)
       .qos(1)
       .finalize();
     if let Err(e) = client.publish(msg) {
