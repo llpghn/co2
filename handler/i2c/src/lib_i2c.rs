@@ -42,7 +42,7 @@ bcd2dec
     let mut i2c = I2c::new()?;
     let temp_msb: u8 = 0xFA;
     let temp_lsb: u8 = 0xFB;
-    let temp_xlsb: u8 = 0xFC
+    let temp_xlsb: u8 = 0xFC;
     i2c.set_slave_address(ADDR_BME280)?;
     
     let written_bytes: usize = i2c.write(&temp_msb)?;
@@ -63,8 +63,8 @@ bcd2dec
     let my_temp: i32 =  (res_temp_msb as i32 << 12) | (res_temp_lsb as i32 << 4) | (res_temp_xlsb >> 4);
 
     println!("Read {} bytes: {}", read_bytes, my_temp);
+
     Ok(())
-    Ok(5)
   } 
 
   pub fn scan() -> Result<(), Box<dyn Error>> {
