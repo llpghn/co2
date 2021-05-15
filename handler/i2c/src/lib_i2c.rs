@@ -64,7 +64,7 @@ bcd2dec
 
     println!("Read {} bytes: {}", read_bytes, my_temp);
 
-    Ok(())
+    Ok(5)
   } 
 
   pub fn scan() -> Result<(), Box<dyn Error>> {
