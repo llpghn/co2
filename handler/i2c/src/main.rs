@@ -8,7 +8,7 @@ mod bme280;         // Struct for handling Kommunikation with BME280-Sensor
 
 enum sms{
     collectData,
-    sendDate,
+    sendData,
     sleep,
 }
 
@@ -25,7 +25,20 @@ impl CollectedData {
         let mut my_message = self.temperature.to_string();
         *message = my_message;
     }
+    fn getHumidityMessage(&self, topic: &mut String, message: &mut String) {
+        let mut my_topic = String::from("/sensor/value/humidity");
+        *topic = my_topic;
+        let mut my_message = self.humidity.to_string();
+        *message = my_message;
+    }
+    fn getPressureMessage(&self, topic: &mut String, message: &mut String) {
+        let mut my_topic = String::from("/sensor/value/pressure");
+        *topic = my_topic;
+        let mut my_message = self.pressure.to_string();
+        *message = my_message;
+    }
 }
+
 
 fn main() {
     //let args: Vec<String> = env::args().collect();                              // get parameter from CLI
@@ -40,16 +53,20 @@ fn main() {
         pressure: 0.0,
     };
 
-    /*
-    while(1){
-        if state == sms::collectData {
+    
+    //while(1){
+        if(state == sms::collectData){
             let measurements = bme280::bme280::get();
             to_send.temperature = measurements.temperature;
             to_send.humidity = measurements.humidity;
             to_send.pressure = measurements.pressure;
+            state == sms::sendData;
         }
-    }
-    */
+        if(state == sms::sendData){
+            lib_mqtt::lib_mqtt::send_msg_temp(&cli);
+        }
+    //}
+    
 
 
     //while(1){}

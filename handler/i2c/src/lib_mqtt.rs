@@ -33,6 +33,18 @@ pub mod lib_mqtt{
     client
   }
 
+  pub fn send_message(client: &mqtt::Client, topic: &String, payload: &String ){
+    println!("{}-{}", *topic, *payload);
+    //let msg = mqtt::MessageBuilder::new()
+    //  .topic(*topic)
+    //  .payload(*payload)
+    //  .qos(1)
+    //  .finalize();
+    //if let Err(e) = client.publish(msg) {
+    //  println!("Error sending message: {:?}", e);
+    //}
+  }
+
   pub fn send_msg_temp(client: &mqtt::Client) {
     // Create a message and publish it
     let msg = mqtt::MessageBuilder::new()
