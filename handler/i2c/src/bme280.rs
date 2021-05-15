@@ -4,7 +4,7 @@ pub mod bme280{
   use bme280::BME280;
 
 
-  fn init() -> BME280::Measure{
+  fn init() -> BME280<I2C, D>::Measure{
     let i2c_bus = I2cdev::new("/dev/i2c-1").unwrap();
     // initialize the BME280 using the primary I2C address 0x76
     let mut bme280 = BME280::new_primary(i2c_bus, Delay);
