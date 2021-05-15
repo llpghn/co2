@@ -61,9 +61,9 @@ fn main() {
                 to_send.temperature = measurements.temperature;
                 to_send.humidity = measurements.humidity;
                 to_send.pressure = measurements.pressure;
-                state == sms::sendData;
+                state = sms::sendData;
             }
-            sms::sendDate => {
+            sms::sendData => {
                 let mut topic = String::from("Not set");
                 let mut message = String::from("Not set");
                 to_send.get_temperature_message(&mut topic, &mut message);
@@ -72,7 +72,7 @@ fn main() {
                 lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
                 to_send.get_pressure_message(&mut topic, &mut message);
                 lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
-                state == sms::sleep;
+                state = sms::sleep;
             }
             sms::sendDate => {
                 let one_second = time::Duration::from_millis(10000);
