@@ -1,20 +1,13 @@
-
-
-struct BME280{
-  temperature: i32,
-  humidity: i32,
-  pressure: i32,
-  bus: str,
-}
-
-impl BME280{
+pub mod bme280{
 
   use linux_embedded_hal::{Delay, I2cdev};
   use bme280::BME280;
 
+  pub fn getTemperature(){
 
+  }
 
-  fn loadValues(&mut self) {
+  fn init() {
     let i2c_bus = I2cdev::new("/dev/i2c-1").unwrap();
     // initialize the BME280 using the primary I2C address 0x76
     let mut bme280 = BME280::new_primary(i2c_bus, Delay);
@@ -32,11 +25,7 @@ impl BME280{
     // measure temperature, pressure, and humidity
     let measurements = bme280.measure().unwrap();
     
-
-    self.humidity = measurements.humidity;
-    self.temperature = measurements.temperature;
-    self.pressure = measurements.pressure;
-
+    measurements
 
     //println!("Relative Humidity = {}%", measurements.humidity);
     //println!("Temperature = {} deg C", measurements.temperature);
