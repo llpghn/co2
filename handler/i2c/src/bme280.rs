@@ -4,9 +4,9 @@ pub mod bme280{
   use bme280::BME280;
 
   pub struct Data{
-    let temperature: i32,
-    let humidity: i32,
-    let pressure: i32,
+    temperature: i32,
+    humidity: i32,
+    pressure: i32,
   }
 
   pub fn get() -> Data{
