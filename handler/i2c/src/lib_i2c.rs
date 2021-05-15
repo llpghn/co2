@@ -60,7 +60,7 @@ bcd2dec
     let mut res_temp_xlsb : [u8; 1] = [0];
     let read_bytes: usize = i2c.read(&mut res_temp_xlsb)?;
 
-    let my_temp: i32 =  (res_temp_msb[0] as i32 << 12) | (res_temp_lsb[0] as i32 << 4) | (res_temp_xlsb[0] >> 4);
+    let my_temp: i32 =  ((res_temp_msb[0] as i32) << 12) | ((res_temp_lsb[0] as i32) << 4) | ((res_temp_xlsb[0] as i32) >> 4);
 
     println!("Read {} bytes: {}", read_bytes, my_temp);
 
