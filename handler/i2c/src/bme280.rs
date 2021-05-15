@@ -3,9 +3,6 @@ pub mod bme280{
   use linux_embedded_hal::{Delay, I2cdev};
   use bme280::BME280;
 
-  pub fn getTemperature(){
-
-  }
 
   fn init() {
     let i2c_bus = I2cdev::new("/dev/i2c-1").unwrap();
