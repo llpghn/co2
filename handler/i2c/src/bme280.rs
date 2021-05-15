@@ -1,6 +1,4 @@
 
-use linux_embedded_hal::{Delay, I2cdev};
-use bme280::BME280;
 
 struct BME280{
   temperature: i32,
@@ -10,7 +8,11 @@ struct BME280{
 }
 
 impl BME280{
-  fn new(bus: str){
+
+  use linux_embedded_hal::{Delay, I2cdev};
+  use bme280::BME280;
+
+  fn new(bus: &str){
     self.bus = bus;
   }
 
