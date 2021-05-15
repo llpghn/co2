@@ -34,15 +34,15 @@ pub mod lib_mqtt{
   }
 
   pub fn send_message(client: &mqtt::Client, topic: &String, payload: &String ){
-    println!("{}-{}", topic, payload);
-    //let msg = mqtt::MessageBuilder::new()
-    //  .topic(*topic)
-    //  .payload(*payload)
-    //  .qos(1)
-    //  .finalize();
-    //if let Err(e) = client.publish(msg) {
-    //  println!("Error sending message: {:?}", e);
-    //}
+    //println!("{}-{}", topic, payload);
+    let msg = mqtt::MessageBuilder::new()
+      .topic(topic)
+      .payload(payload)
+      .qos(1)
+      .finalize();
+    if let Err(e) = client.publish(msg) {
+      println!("Error sending message: {:?}", e);
+    }
   }
 
   pub fn send_msg_temp(client: &mqtt::Client) {
