@@ -21,8 +21,10 @@ struct CollectedData {
 
 impl CollectedData {
     fn getTemperatureMessage(&self, topic: &mut str, message: &mut str) {
-        topic = "/sensor/value/temperature";
-        message = self.temperature.to_string();
+        let my_topic = "/sensor/value/temperature";
+        topic = my_topic;
+        let my_message = self.temperature.to_string();
+        message = my_message;
     }
 }
 
