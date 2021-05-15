@@ -54,7 +54,7 @@ fn main() {
     };
 
     
-    while(1){
+    while(true){
         match state{
             sms::collectData => {
                 let measurements = bme280::bme280::get();
@@ -74,7 +74,7 @@ fn main() {
                 lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
                 state = sms::sleep;
             }
-            sms::sendDate => {
+            sms::sleep => {
                 let one_second = time::Duration::from_millis(10000);
                 thread::sleep(one_second);
             }
