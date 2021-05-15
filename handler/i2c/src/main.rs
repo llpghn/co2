@@ -7,9 +7,9 @@ use std::{thread, time};
 /////////////////////////////////////////////////////////////////////////////
 
 enum sms{
-    collectData,
-    sendData,
-    sleep,
+    CollectData,
+    SendData,
+    Sleeping,
 }
 
 struct CollectedData {
@@ -45,7 +45,7 @@ fn main() {
 
     env_logger::init();                                                         // Initialize the logger from the env
     // Initialize 
-    let state = sms::collectData;
+    let state = sms::CollectData;
     let cli = lib_mqtt::lib_mqtt::connect_to_broker();
     let mut to_send = CollectedData{
         temperature: 0.0,
@@ -56,14 +56,14 @@ fn main() {
     
     while(true){
         match state{
-            sms::collectData => {
+            sms::CollectData => {
                 let measurements = bme280::bme280::get();
                 to_send.temperature = measurements.temperature;
                 to_send.humidity = measurements.humidity;
                 to_send.pressure = measurements.pressure;
-                state = sms::sendData;
+                state = sms::SendData;
             }
-            sms::sendData => {
+            sms::SendData => {
                 let mut topic = String::from("Not set");
                 let mut message = String::from("Not set");
                 to_send.get_temperature_message(&mut topic, &mut message);
@@ -72,11 +72,12 @@ fn main() {
                 lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
                 to_send.get_pressure_message(&mut topic, &mut message);
                 lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
-                state = sms::sleep;
+                state = sms::Sleeping;
             }
-            sms::sleep => {
+            sms::Sleeping => {
                 let one_second = time::Duration::from_millis(10000);
                 thread::sleep(one_second);
+                state = sms::CollectData;
             }
         }
         
