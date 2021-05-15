@@ -12,8 +12,7 @@ fn main() {
     //let args: Vec<String> = env::args().collect();                              // get parameter from CLI
 
     env_logger::init();                                                         // Initialize the logger from the env
-    let bussystem = "/dev/i2c-1";
-    let sens = bme280::BME280::new(&bussystem);
+
     sens::loadValues();
     println!("Temperature: {}", send.temperature);
         
