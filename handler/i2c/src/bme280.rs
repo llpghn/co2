@@ -9,7 +9,7 @@ pub mod bme280{
     let pressure: i32,
   }
 
-  fn get() -> Data{
+  pub fn get() -> Data{
     let i2c_bus = I2cdev::new("/dev/i2c-1").unwrap();
     // initialize the BME280 using the primary I2C address 0x76
     let mut bme280 = BME280::new_primary(i2c_bus, Delay);
