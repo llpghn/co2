@@ -63,7 +63,7 @@ fn main() {
     
     let mut topic = String::from("Not set");
     let mut message = String::from("Not set");
-    to_send::getTemperatureMessage(&mut topic, &mut message);
+    toSend::getTemperatureMessage(&mut topic, &mut message);
     
     println!("- Topic: {}", topic);
     println!("- Message: {}", message);
