@@ -39,7 +39,7 @@ fn main() {
         temperature: 0.0,
         humidity: 0.0, 
         pressure: 0.0,
-    }
+    };
 
     /*
     while(1){
