@@ -37,7 +37,7 @@ bcd2dec
   */
 
 
-  fn read_temp_register() -> Result< u8 , Box<dyn Error>> {
+  pub fn read_temp_register() -> Result< u8 , Box<dyn Error>> {
     println!("--- Try to read the Temp ---")
     let mut i2c = I2c::new()?;
     let temp_msb: u8 = 0xFA;
