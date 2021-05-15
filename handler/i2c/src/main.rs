@@ -19,7 +19,7 @@ struct CollectedData {
 }
 
 impl CollectedData {
-    fn get_temperature_message(&self, top_mc: &mut String, message: &mut String) {
+    fn get_temperature_message(&self, topic: &mut String, message: &mut String) {
         let mut my_topic = String::from("/sensor/value/temperature");
         *topic = my_topic;
         let mut my_message = self.temperature.to_string();
