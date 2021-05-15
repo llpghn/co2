@@ -19,19 +19,19 @@ struct CollectedData {
 }
 
 impl CollectedData {
-    fn getTemperatureMessage(&self, topic: &mut String, message: &mut String) {
+    fn get_temperature_message(&self, top_mc: &mut String, message: &mut String) {
         let mut my_topic = String::from("/sensor/value/temperature");
         *topic = my_topic;
         let mut my_message = self.temperature.to_string();
         *message = my_message;
     }
-    fn getHumidityMessage(&self, topic: &mut String, message: &mut String) {
+    fn get_humidity_message(&self, topic: &mut String, message: &mut String) {
         let mut my_topic = String::from("/sensor/value/humidity");
         *topic = my_topic;
         let mut my_message = self.humidity.to_string();
         *message = my_message;
     }
-    fn getPressureMessage(&self, topic: &mut String, message: &mut String) {
+    fn get_pressure_message(&self, topic: &mut String, message: &mut String) {
         let mut my_topic = String::from("/sensor/value/pressure");
         *topic = my_topic;
         let mut my_message = self.pressure.to_string();
@@ -84,7 +84,7 @@ fn main() {
     
     let mut topic = String::from("Not set");
     let mut message = String::from("Not set");
-    toSend.getTemperatureMessage(&mut topic, &mut message);
+    toSend.get_temperature_message(&mut topic, &mut message);
     
     lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
 
