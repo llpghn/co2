@@ -2,7 +2,7 @@
 //use paho_mqtt as mqtt;
 
 //mod lib_mqtt;     // Handler für MQTT Kommunikation
-mod bme280::bme280;         // Struct for handling Kommunikation with BME280-Sensor
+mod bme280;         // Struct for handling Kommunikation with BME280-Sensor
 
 /////////////////////////////////////////////////////////////////////////////
 
