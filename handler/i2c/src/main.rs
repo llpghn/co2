@@ -21,9 +21,9 @@ struct CollectedData {
 
 impl CollectedData {
     fn getTemperatureMessage(&self, topic: &mut str, message: &mut str) {
-        let my_topic = "/sensor/value/temperature";
+        let mut my_topic = "/sensor/value/temperature";
         topic = my_topic;
-        let my_message = self.temperature.to_string();
+        let mut my_message = self.temperature.to_string();
         message = my_message;
     }
 }
@@ -33,7 +33,7 @@ fn main() {
 
     env_logger::init();                                                         // Initialize the logger from the env
     // Initialize 
-    let state: u8 = sms::collectData;
+    let state = sms::collectData;
     let cli = lib_mqtt::lib_mqtt::connect_to_broker();
     let to_send = CollectedData{
         temperature: 0.0,
