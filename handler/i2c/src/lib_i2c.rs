@@ -40,9 +40,9 @@ bcd2dec
   pub fn read_temp_register() -> Result< u8 , Box<dyn Error>> {
     println!("--- Try to read the Temp ---");
     let mut i2c = I2c::new()?;
-    let temp_msb: [u8] = 0xFA;
-    let temp_lsb: [u8] = 0xFB;
-    let temp_xlsb: [u8] = 0xFC;
+    let temp_msb: [u8; 1] = [0xFA];
+    let temp_lsb: [u8; 1] = [0xFB];
+    let temp_xlsb: [u8; 1] = [0xFC];
     i2c.set_slave_address(ADDR_BME280)?;
     
     let written_bytes: usize = i2c.write(&temp_msb)?;
