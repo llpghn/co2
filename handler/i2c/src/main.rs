@@ -9,7 +9,7 @@ mod bme280;         // Struct for handling Kommunikation with BME280-Sensor
 enum sms{
     collectData,
     sendData,
-    sleep,
+    //sleep,
 }
 
 struct CollectedData {
@@ -47,7 +47,7 @@ fn main() {
     // Initialize 
     let state = sms::collectData;
     let cli = lib_mqtt::lib_mqtt::connect_to_broker();
-    let mut toSend = CollectedData{
+    let mut to_send = CollectedData{
         temperature: 0.0,
         humidity: 0.0, 
         pressure: 0.0,
@@ -78,13 +78,13 @@ fn main() {
 
     // Load Data from Sensor
     let measurements = bme280::bme280::get();
-    toSend.temperature = measurements.temperature;
-    toSend.humidity = measurements.humidity;
-    toSend.pressure = measurements.pressure;
+    to_send.temperature = measurements.temperature;
+    to_send.humidity = measurements.humidity;
+    to_send.pressure = measurements.pressure;
     
     let mut topic = String::from("Not set");
     let mut message = String::from("Not set");
-    toSend.get_temperature_message(&mut topic, &mut message);
+    to_send.get_temperature_message(&mut topic, &mut message);
     
     lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
 
