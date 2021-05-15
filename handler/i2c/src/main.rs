@@ -55,16 +55,21 @@ fn main() {
 
     
     //while(1){
-        if(state == sms::collectData){
-            let measurements = bme280::bme280::get();
-            to_send.temperature = measurements.temperature;
-            to_send.humidity = measurements.humidity;
-            to_send.pressure = measurements.pressure;
-            state == sms::sendData;
+    /*
+        match state{
+            sms::collectData => {
+                let measurements = bme280::bme280::get();
+                to_send.temperature = measurements.temperature;
+                to_send.humidity = measurements.humidity;
+                to_send.pressure = measurements.pressure;
+                state == sms::sendData;
+            }
+            sms::sendDate => {
+
+            }
         }
-        if(state == sms::sendData){
-            lib_mqtt::lib_mqtt::send_msg_temp(&cli);
-        }
+        */
+            
     //}
     
 
@@ -81,8 +86,11 @@ fn main() {
     let mut message = String::from("Not set");
     toSend.getTemperatureMessage(&mut topic, &mut message);
     
-    println!("- Topic: {}", topic);
-    println!("- Message: {}", message);
+    lib_mqtt::lib_mqtt::send_msg_temp(&cli, &topic, &message);
+
+
+    //println!("- Topic: {}", topic);
+    //println!("- Message: {}", message);
     println!("Measurement for temperature: {}", measurements.temperature);
     //
     //lib_mqtt::lib_mqtt::send_msg_temp(&cli);
