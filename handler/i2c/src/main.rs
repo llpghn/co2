@@ -12,7 +12,8 @@ fn main() {
     env_logger::init();                                                         // Initialize the logger from the env
 
     
-    bme280::bme280::init();
+    let measurements = bme280::bme280::get();
+    println!("Measurement for temperature: {}", measurements.temperature);
     //let cli = lib_mqtt::lib_mqtt::connect_to_broker();
     //lib_mqtt::lib_mqtt::send_msg_temp(&cli);
     // Disconnect from the broker
