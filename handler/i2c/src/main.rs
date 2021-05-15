@@ -13,10 +13,9 @@ enum sms{
 }
 
 struct CollectedData {
-    mut temperature: f32,
-    mut humidity: f32, 
-    mut pressure: f32,
-    
+    temperature: f32,
+    humidity: f32, 
+    pressure: f32,
 }
 
 impl CollectedData {
@@ -35,7 +34,7 @@ fn main() {
     // Initialize 
     let state = sms::collectData;
     let cli = lib_mqtt::lib_mqtt::connect_to_broker();
-    let toSend = CollectedData{
+    let mut toSend = CollectedData{
         temperature: 0.0,
         humidity: 0.0, 
         pressure: 0.0,
