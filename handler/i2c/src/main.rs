@@ -61,8 +61,8 @@ fn main() {
     to_send.humidity = measurements.humidity;
     to_send.pressure = measurements.pressure;
     
-    let mut topic: String::from("Not set");
-    let mut message: String::from("Not set");
+    let mut topic = String::from("Not set");
+    let mut message = String::from("Not set");
     to_send::getTemperatureMessage(&mut topic, &mut message);
     
     println!("- Topic: {}", topic);
