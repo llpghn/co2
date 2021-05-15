@@ -55,7 +55,16 @@ fn main() {
 
     // Load Data from Sensor
     let measurements = bme280::bme280::get();
+    to_send.temperature = measurements.temperature;
+    to_send.humidity = measurements.humidity;
+    to_send.pressure = measurements.pressure;
     
+    let mut topic = String::from("Not set");
+    let mut message = String::from("Not set");
+    to_send::getTemperatureMessage(&mut topic, &mut message);
+    
+    println!("- Topic: {}", topic);
+    println!("- Message: {}", message);
     println!("Measurement for temperature: {}", measurements.temperature);
     //
     //lib_mqtt::lib_mqtt::send_msg_temp(&cli);
