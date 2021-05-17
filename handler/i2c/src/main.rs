@@ -45,7 +45,7 @@ fn main() {
 
     env_logger::init();                                                         // Initialize the logger from the env
     // Initialize 
-    let state = sms::CollectData;
+    let mut state = sms::CollectData;
     let cli = lib_mqtt::lib_mqtt::connect_to_broker();
     let mut to_send = CollectedData{
         temperature: 0.0,
