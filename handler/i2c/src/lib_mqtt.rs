@@ -33,7 +33,7 @@ pub mod lib_mqtt{
     client
   }
 
-  pub fn send_message(client: &mqtt::Client, topic: &String, message: &String ){
+  pub fn send_message(client: &mqtt::Client, topic: &str, message: &str ){
     //println!("{}-{}", topic, payload);
     let msg = mqtt::MessageBuilder::new()
       .topic(topic)

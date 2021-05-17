@@ -64,8 +64,8 @@ fn main() {
                 state = sms::SendData;
             }
             sms::SendData => {
-                let mut topic = String::from("Not set");
-                let mut message = String::from("Not set");
+                let mut topic: str = "Not set";
+                let mut message: str = "Not set";
                 to_send.get_temperature_message(&mut topic, &mut message);
                 lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
                 to_send.get_humidity_message(&mut topic, &mut message);
