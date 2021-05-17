@@ -37,7 +37,7 @@ pub mod lib_mqtt{
     //println!("{}-{}", topic, payload);
     let msg = mqtt::MessageBuilder::new()
       .topic(topic)
-      .payload(*message.into_bytes())
+      .payload(message.as_bytes().to_vec())
       .qos(1)
       .finalize();
     if let Err(e) = client.publish(msg) {
