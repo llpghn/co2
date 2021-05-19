@@ -96,7 +96,7 @@ mod lib_mqtt{
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-enum sms{
+enum Sms{
   CollectData,
   SendData,
   Sleeping,
@@ -144,15 +144,15 @@ pub fn mainloop(){
 
   loop {
       match state{
-          sms::CollectData => {
+          Sms::CollectData => {
               let measurements = sens_bme::load_data();  
               //let measurements = bme280::bme280::get();
               to_send.temperature = measurements.temperature;
               to_send.humidity = measurements.humidity;
               to_send.pressure = measurements.pressure;
-              state = sms::SendData;
+              state = Sms::SendData;
           }
-          sms::SendData => {
+          Sms::SendData => {
               let mut topic = String::from("Not set");
               let mut message = String::from("Not set");
               to_send.get_temperature_message(&mut topic, &mut message);
@@ -161,16 +161,16 @@ pub fn mainloop(){
               lib_mqtt::send_message(&cli, &topic, &message);
               to_send.get_pressure_message(&mut topic, &mut message);
               lib_mqtt::send_message(&cli, &topic, &message);
-              state = sms::Sleeping;
+              state = Sms::Sleeping;
           }
-          sms::Sleeping => {
+          Sms::Sleeping => {
               let one_second = time::Duration::from_millis(10000);
               thread::sleep(one_second);
-              state = sms::CollectData;
+              state = Sms::CollectData;
           }
       }
       
           
   }
-  cli.disconnect(None).unwrap();
+  //cli.disconnect(None).unwrap();
 }
