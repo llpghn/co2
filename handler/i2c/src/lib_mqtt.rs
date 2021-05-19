@@ -1,5 +1,5 @@
 
-//pub mod lib_mqtt{
+pub mod lib_mqtt{
 
   use std::{process, time::Duration}; 
   pub use paho_mqtt as mqtt;
@@ -56,5 +56,4 @@
       println!("Error sending message: {:?}", e);
     }
   }
-
-//}
+}
