@@ -116,8 +116,8 @@ impl CollectedData {
       *message = my_message;
   }
   fn get_humidity_message(&self, topic: &mut String, message: &mut String) {
-      let my_topic = String::from("/sensor/value/humidity");
-      *topic = my_topic;
+      //let my_topic = String::from("/sensor/value/humidity");
+      *topic = String::from("/sensor/value/humidity");
       let my_message = self.humidity.to_string();
       *message = my_message;
   }
