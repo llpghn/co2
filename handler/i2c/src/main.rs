@@ -4,8 +4,11 @@
 mod lib_mqtt;       // Handler für MQTT Kommunikation
 mod bme280;         // Struct for handling Kommunikation with BME280-Sensor
 use std::{thread, time};
-/////////////////////////////////////////////////////////////////////////////
 
+
+mod lib;    /* Hauptimport für die State-Machine*/
+/////////////////////////////////////////////////////////////////////////////
+/*
 enum sms{
     CollectData,
     SendData,
@@ -38,11 +41,12 @@ impl CollectedData {
         *message = my_message;
     }
 }
-
+*/
 
 fn main() {
+    lib::mainloop();
     //let args: Vec<String> = env::args().collect();                              // get parameter from CLI
-
+    /*
     env_logger::init();                                                         // Initialize the logger from the env
     // Initialize 
     let mut state = sms::CollectData;
@@ -84,34 +88,5 @@ fn main() {
             
     }
     cli.disconnect(None).unwrap();
-
-
-    //while(1){}
-
-    // Load Data from Sensor
-    /*
-    let measurements = bme280::bme280::get();
-    to_send.temperature = measurements.temperature;
-    to_send.humidity = measurements.humidity;
-    to_send.pressure = measurements.pressure;
-    
-    let mut topic = String::from("Not set");
-    let mut message = String::from("Not set");
-    to_send.get_temperature_message(&mut topic, &mut message);
-    
-    lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
-
     */
-    //println!("- Topic: {}", topic);
-    //println!("- Message: {}", message);
-    //println!("Measurement for temperature: {}", measurements.temperature);
-    //
-    //lib_mqtt::lib_mqtt::send_msg_temp(&cli);
-    // Disconnect from the broker
-    //cli.disconnect(None).unwrap();
-
-    
-
-
-
 }
