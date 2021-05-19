@@ -146,6 +146,7 @@ pub struct Data{
   pub pressure: f32,
 }
 
+/*
 pub fn loadData() -> Data{
   let i2c_bus = I2cdev::new("/dev/i2c-1").unwrap();
   // initialize the BME280 using the primary I2C address 0x76
@@ -163,7 +164,7 @@ pub fn loadData() -> Data{
   };
   d
 }
-
+*/
 
 pub fn mainloop(){
   println!("Entering Main-Loop");
