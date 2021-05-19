@@ -110,21 +110,21 @@ struct CollectedData {
 
 impl CollectedData {
   fn get_temperature_message(&self, topic: &mut String, message: &mut String) {
-      let mut my_topic = String::from("/sensor/value/temperature");
+      let my_topic = String::from("/sensor/value/temperature");
       *topic = my_topic;
-      let mut my_message = self.temperature.to_string();
+      let my_message = self.temperature.to_string();
       *message = my_message;
   }
   fn get_humidity_message(&self, topic: &mut String, message: &mut String) {
-      let mut my_topic = String::from("/sensor/value/humidity");
+      let my_topic = String::from("/sensor/value/humidity");
       *topic = my_topic;
-      let mut my_message = self.humidity.to_string();
+      let my_message = self.humidity.to_string();
       *message = my_message;
   }
   fn get_pressure_message(&self, topic: &mut String, message: &mut String) {
-      let mut my_topic = String::from("/sensor/value/pressure");
+      let my_topic = String::from("/sensor/value/pressure");
       *topic = my_topic;
-      let mut my_message = self.pressure.to_string();
+      let my_message = self.pressure.to_string();
       *message = my_message;
   }
 }
