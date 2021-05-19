@@ -134,7 +134,7 @@ pub fn mainloop(){
   println!("Entering Main-Loop");
   env_logger::init();                                                         // Initialize the logger from the env
   // Initialize 
-  let mut state = sms::CollectData;
+  let mut state = Sms::CollectData;
   let cli = lib_mqtt::connect_to_broker();
   let mut to_send = CollectedData{
       temperature: 0.0,
