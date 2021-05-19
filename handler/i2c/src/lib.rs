@@ -55,7 +55,8 @@ pub fn mainloop(){
   loop {
       match state{
           sms::CollectData => {
-              let measurements = bme280::bme280::get();
+            let measurements = bme280::get();  
+            //let measurements = bme280::bme280::get();
               to_send.temperature = measurements.temperature;
               to_send.humidity = measurements.humidity;
               to_send.pressure = measurements.pressure;
