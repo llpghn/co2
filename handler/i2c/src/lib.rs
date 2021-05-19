@@ -25,7 +25,7 @@ mod sens_bme{
         pub pressure: f32,
     }
 
-    pub fn loadData() -> Data{
+    pub fn load_data() -> Data{
         let i2c_bus = I2cdev::new("/dev/i2c-1").unwrap();
         // initialize the BME280 using the primary I2C address 0x76
         let mut bme280 = BME280::new_primary(i2c_bus, Delay);
@@ -92,17 +92,6 @@ mod lib_mqtt{
     }
   }
 
-  pub fn send_msg_temp(client: &mqtt::Client) {
-    // Create a message and publish it
-    let msg = mqtt::MessageBuilder::new()
-      .topic("/sensor/value/temperature")
-      .payload("Hello synchronous world!")
-      .qos(1)
-      .finalize();
-    if let Err(e) = client.publish(msg) {
-      println!("Error sending message: {:?}", e);
-    }
-  }
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -140,31 +129,6 @@ impl CollectedData {
   }
 }
 
-pub struct Data{
-  pub temperature: f32,
-  pub humidity: f32,
-  pub pressure: f32,
-}
-
-/*
-pub fn loadData() -> Data{
-  let i2c_bus = I2cdev::new("/dev/i2c-1").unwrap();
-  // initialize the BME280 using the primary I2C address 0x76
-  let mut bme280 = BME280::new_primary(i2c_bus, Delay);
-  
-  bme280.init().unwrap();
-  
-  // measure temperature, pressure, and humidity
-  let measurements = bme280.measure().unwrap();
-  
-  let d = Data{
-    temperature : measurements.temperature,
-    humidity : measurements.humidity,
-    pressure : measurements.pressure,
-  };
-  d
-}
-*/
 
 pub fn mainloop(){
   println!("Entering Main-Loop");
@@ -181,7 +145,7 @@ pub fn mainloop(){
   loop {
       match state{
           sms::CollectData => {
-              let measurements = sens_bme::loadData();  
+              let measurements = sens_bme::load_data();  
               //let measurements = bme280::bme280::get();
               to_send.temperature = measurements.temperature;
               to_send.humidity = measurements.humidity;
