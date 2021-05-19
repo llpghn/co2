@@ -45,7 +45,7 @@ pub fn mainloop(){
   env_logger::init();                                                         // Initialize the logger from the env
   // Initialize 
   let mut state = sms::CollectData;
-  let cli = lib_mqtt::lib_mqtt::connect_to_broker();
+  let cli = lib_mqtt::connect_to_broker();
   let mut to_send = CollectedData{
       temperature: 0.0,
       humidity: 0.0, 
@@ -66,11 +66,11 @@ pub fn mainloop(){
               let mut topic = String::from("Not set");
               let mut message = String::from("Not set");
               to_send.get_temperature_message(&mut topic, &mut message);
-              lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
+              lib_mqtt::send_message(&cli, &topic, &message);
               to_send.get_humidity_message(&mut topic, &mut message);
-              lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
+              lib_mqtt::send_message(&cli, &topic, &message);
               to_send.get_pressure_message(&mut topic, &mut message);
-              lib_mqtt::lib_mqtt::send_message(&cli, &topic, &message);
+              lib_mqtt::send_message(&cli, &topic, &message);
               state = sms::Sleeping;
           }
           sms::Sleeping => {
