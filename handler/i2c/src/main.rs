@@ -1,9 +1,9 @@
 
 //use paho_mqtt as mqtt;
 
-mod lib_mqtt;       // Handler für MQTT Kommunikation
-mod bme280;         // Struct for handling Kommunikation with BME280-Sensor
-use std::{thread, time};
+//mod lib_mqtt;       // Handler für MQTT Kommunikation
+//mod bme280;         // Struct for handling Kommunikation with BME280-Sensor
+//use std::{thread, time};
 
 
 mod lib;    /* Hauptimport für die State-Machine*/
