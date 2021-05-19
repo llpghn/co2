@@ -4,8 +4,9 @@
  * Enthält die `mainloop` für die State-Machine und führt diese aus.
 */
 
-mod lib_mqtt;       // Handler für MQTT Kommunikation
-mod bme280;         // Struct for handling Kommunikation with BME280-Sensor
+//
+use lib_mqtt;       // Handler für MQTT Kommunikation
+use bme280;         // Struct for handling Kommunikation with BME280-Sensor
 use std::{thread, time};
 
 enum sms{
