@@ -120,6 +120,7 @@ impl CollectedData {
   fn get_pressure_message(&self, topic: &mut String, message: &mut String) {
       *topic =  String::from("/sensor/value/pressure");
       *message = self.pressure.to_string();
+  }
 }
 
 
