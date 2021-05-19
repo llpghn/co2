@@ -5,8 +5,8 @@
 */
 
 //
-use lib_mqtt;       // Handler für MQTT Kommunikation
-use bme280;         // Struct for handling Kommunikation with BME280-Sensor
+mod lib_mqtt;       // Handler für MQTT Kommunikation
+mod lib_bme280;         // Struct for handling Kommunikation with BME280-Sensor
 use std::{thread, time};
 
 enum sms{
